@@ -7,8 +7,8 @@
       "url": ".gitignore"
     },
     "AGENTS.md": {
-      "bytes": 934,
-      "sha256": "e37467f642a469662b4e314715054991724aff1d72ee5a0d7dd959fa2d6870f6",
+      "bytes": 1219,
+      "sha256": "740503934e08a9a4e95b6219484bf00eb6b53fe8123128829a3f4ecac2c4a3d4",
       "url": "AGENTS.md"
     },
     "CMUDICT-LICENSE.txt": {
@@ -22,13 +22,13 @@
       "url": "LICENSE"
     },
     "NOTICE": {
-      "bytes": 570,
-      "sha256": "e3eb9ca564d73e1028c177d165fac0cd5572924ea0acd024e7c587713012b751",
+      "bytes": 566,
+      "sha256": "1e29eb654225686e01162299e206f2ef114b76153e08cce7c1471c181b7c5649",
       "url": "NOTICE"
     },
     "README.md": {
-      "bytes": 6167,
-      "sha256": "92b83e19e65c41dd60770134c216a541a90d00972c429743d2019bece4230d33",
+      "bytes": 7543,
+      "sha256": "649c196c849d74341f20edc56e45fccdaf18ee1bb37c40eaad5b8af61ac539d4",
       "url": "README.md"
     },
     "cmudict.dict": {
@@ -42,9 +42,14 @@
       "url": "examples/format-poem.txt"
     },
     "scripts/build.py": {
-      "bytes": 4789,
-      "sha256": "e9685583f8901405cd87966e103402d76e6c0edb908960e3f500389b71b8a6eb",
+      "bytes": 4725,
+      "sha256": "5148aefe145d7068e06280bb8d53aa6a8460d2b081648d29b3d3fae0a5815a0e",
       "url": "scripts/build.py"
+    },
+    "scripts/check_cycle.py": {
+      "bytes": 1795,
+      "sha256": "4b54b89d067e5998f399e29902c30212ee26223b31b2fca45ff9f4bb780e1def",
+      "url": "scripts/check_cycle.py"
     },
     "scripts/check_word.py": {
       "bytes": 1450,
@@ -57,14 +62,9 @@
       "url": "scripts/verify.py"
     },
     "sonnet-game.md": {
-      "bytes": 46240,
-      "sha256": "cfa71500904fbc007c0ef34d03ff26e9ab04a1467f407c50bc11453cf914f16c",
+      "bytes": 23791,
+      "sha256": "af76f3bd69431834b4e7acd30b369ca85cae7e92d778487678ccd14c25731103",
       "url": "sonnet-game.md"
-    },
-    "sonnet_format.sql": {
-      "bytes": 2859,
-      "sha256": "e3fc9f1d371e293f65c2f7a4dee61273812c16acc5a5ec90a81024a92586232a",
-      "url": "sonnet_format.sql"
     },
     "sonnet_validate.py": {
       "bytes": 4490,
@@ -77,8 +77,8 @@
       "url": "tests/test_package.py"
     },
     "tests/test_validator.py": {
-      "bytes": 6073,
-      "sha256": "6bf3f16ac54414935b2067ef5033786517a61316ae12d84d60432ff705d220b3",
+      "bytes": 3416,
+      "sha256": "fdb1b419b02c50a942ca75eb313416ab3f66618a4a37d5eb555deb3e88fda87b",
       "url": "tests/test_validator.py"
     },
     "upstream.json": {
@@ -112,5 +112,5 @@
     }
   },
   "url_resolution": "Artifact URLs are relative to this manifest's URL.",
-  "version": "0.1.0-draft"
+  "version": "0.2.0-draft"
 }

@@ -9,10 +9,9 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.1.0-draft"
+VERSION = "0.2.0-draft"
 GENERATED = {
     "sonnet_validate.py": ("Python validator", "python"),
-    "sonnet_format.sql": ("SQLite format constraints", "sql"),
 }
 ARTIFACTS = (
     ".gitignore",
@@ -22,13 +21,13 @@ ARTIFACTS = (
     "NOTICE",
     "sonnet-game.md",
     "sonnet_validate.py",
-    "sonnet_format.sql",
     "cmudict.dict",
     "CMUDICT-LICENSE.txt",
     "upstream.json",
     "scripts/build.py",
     "scripts/verify.py",
     "scripts/check_word.py",
+    "scripts/check_cycle.py",
     "examples/format-poem.txt",
     "tests/test_package.py",
     "tests/test_validator.py",
@@ -117,7 +116,7 @@ def main() -> int:
     except (OSError, ValueError, KeyError) as error:
         print(f"build: {error}", file=sys.stderr)
         return 1
-    print("Generated files are current." if args.check else "Generated validator, SQL, and manifest.")
+    print("Generated files are current." if args.check else "Generated validator and manifest.")
     return 0
 
 

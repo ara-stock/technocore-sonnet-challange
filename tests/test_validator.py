@@ -1,4 +1,3 @@
-import sqlite3
 import tempfile
 import unittest
 from pathlib import Path
@@ -66,58 +65,6 @@ class FormTests(unittest.TestCase):
         self.assertGreater(len(lexicon), 100_000)
         self.assertEqual(validate_poem((ROOT / "examples/format-poem.txt").read_text(),
                                        lexicon, exact_ten=True), [10] * 14)
-
-
-class DatabaseTests(unittest.TestCase):
-    def setUp(self):
-        self.db = sqlite3.connect(":memory:")
-        self.addCleanup(self.db.close)
-        self.db.create_function("word_syllables", 1, lambda word: word_syllables(word, LEXICON),
-                                deterministic=True)
-        self.db.create_function("validate_word", 2, lambda word, did: validate_word(word, did, LEXICON),
-                                deterministic=True)
-        self.db.executescript((ROOT / "sonnet_format.sql").read_text())
-
-    def add(self, turn, did=DID_A, word="I", line=1, game="game-a"):
-        self.db.execute("INSERT INTO sonnet_words VALUES (?, ?, ?, ?, ?)",
-                        (game, turn, line, did, word))
-
-    def test_turn_order_repeat_participation_and_immutability(self):
-        self.add(1)
-        with self.assertRaisesRegex(sqlite3.IntegrityError, "consecutive"):
-            self.add(2, line=2)
-        self.add(2, DID_B)
-        self.add(3, DID_A)
-        with self.assertRaisesRegex(sqlite3.IntegrityError, "advance"):
-            self.add(2, DID_B)
-        for sql in ("UPDATE sonnet_words SET token = 'the'",
-                    "DELETE FROM sonnet_words",
-                    "INSERT OR REPLACE INTO sonnet_words VALUES ('game-a', 1, 1, ?, 'I')"):
-            with self.subTest(sql=sql), self.assertRaises(sqlite3.IntegrityError):
-                self.db.execute(sql, (DID_B,) if "?" in sql else ())
-        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM sonnet_words").fetchone()[0], 3)
-
-    def test_overflow_and_games_are_independent(self):
-        for turn in range(1, 11):
-            self.add(turn, DID_A if turn % 2 else DID_B)
-        with self.assertRaisesRegex(sqlite3.IntegrityError, "exceeds 10"):
-            self.add(11)
-        self.add(11, line=2)
-        self.add(1, game="game-b")
-
-    def test_dictionary_and_did_checks_cannot_be_bypassed(self):
-        for did, word in ((DID_A, "wool"), (DID_A, "I I"), ("agent-a", "I")):
-            with self.subTest(did=did, word=word), self.assertRaises(sqlite3.DatabaseError):
-                self.add(1, did, word)
-
-    def test_participation_floor_and_ceiling(self):
-        # Syntax fixtures only: the SQL example does not authenticate public keys.
-        for number, final_character in enumerate("abcdefghi", 1):
-            self.add(number, DID_A[:-1] + final_character)
-            if number in (3, 4, 8, 9):
-                count, valid = self.db.execute("SELECT contributors, valid FROM sonnet_participation").fetchone()
-                self.assertEqual(count, number)
-                self.assertEqual(valid, int(4 <= number <= 8))
 
 
 if __name__ == "__main__":
