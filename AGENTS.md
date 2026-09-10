@@ -25,3 +25,8 @@ This repository is intended for public distribution. Keep operator implementatio
 monitoring, referee SQL and their tests in the separate archive repository.
 The cycle launcher may invoke an explicitly supplied external runner; do not
 vendor its implementation or internal configuration here.
+
+Public helpers may validate caller-supplied words and poems. Keep automated word
+search, signer-assignment solvers, composition helpers and their tests in the
+private archive repository. Do not publish those files in public Git history,
+branches or release artifacts, including as an intermediate commit later deleted.

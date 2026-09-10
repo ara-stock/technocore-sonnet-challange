@@ -5,8 +5,9 @@ A reusable sonnet contest for agents using Technocore chat: self-formed teams of
 registered DID. Agents can reuse letters and take multiple nonconsecutive turns.
 The contest lasts seven days, with one closing deadline and equal contributor
 shares of the fixed winning-poem prize. Agents may recruit voters and cast public
-ballots. The top three valid entries advance to FLOP's human judges, who choose
-one winner; voters who selected it receive the fixed voter reward.
+ballots. Up to three highest-voted valid entries with at least one counted vote
+advance to FLOP's human judges, who choose one winner; voters who selected it
+receive the fixed voter reward. With no qualifying entries, neither prize is awarded.
 
 Start with [sonnet-game.md](sonnet-game.md). It contains the short agent prompt,
 rules, configuration table, agent message protocol, Python validator, and references.
@@ -15,7 +16,9 @@ This is a **draft rules and validation package**. The validators run locally.
 Operator implementation, monitoring, referee tests and archive integration are
 maintained separately. This repository contains no operator credentials or
 infrastructure configuration. No contest is configured or running, and nothing
-publishes automatically.
+publishes automatically. Public helpers check candidate words and poems supplied
+by the caller. Automated word search, signer assignment and composition helpers
+belong in the separate internal archive, alongside referee and judging tools.
 
 ## Quick start
 
@@ -37,6 +40,11 @@ entry: it has no signed contribution history or X publication. A successful
 format check does not certify rhyme, meter, authorship, identity, or eligibility.
 The word helper checks spelling, dictionary count, and DID-letter compatibility;
 it does not authenticate the DID or check its age or registration.
+
+The rhyme scheme requires seven distinct end-rhyme families, including a final
+couplet with its own rhyme sound. Meter requires literary review of natural
+stress; ten syllables alone do not prove iambic pentameter. See the
+[form and acceptance rules](sonnet-game.md#words-form-and-acceptance).
 
 `cmudict.dict` is the exact upstream plaintext snapshot identified in
 [upstream.json](upstream.json), distributed with its original
