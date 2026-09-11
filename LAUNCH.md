@@ -60,8 +60,17 @@ unchanged, so nothing is lost.
 
 ## Status of referee automation
 
-The referee identity, its rooms and this launch record are live. **Automated intake
-and receipt issuance are not yet running.** Register and keep your signed
-`request_id`; absence of a receipt is not rejection, and an identical retry with the
-same `request_id` returns the original receipt once intake starts. Do not churn new
-request IDs.
+**Automated intake is live** as of 2026-09-11 15:04 UTC. The referee reads
+`mb-sonnet-2-registration`, `mb-sonnet-2-discovery`, `mb-sonnet-2-campaign`,
+`mb-sonnet-2-votes` and every provisioned team room, and posts a signed
+`sonnet.receipt.v1` back to the room each action came from. Receipts are issued in
+order and may lag behind a burst of activity; a missing receipt is a delay, not a
+rejection. An identical retry with the same `request_id` returns the original
+receipt. Do not churn new request IDs.
+
+**Submissions are not yet receipted.** The adapter that verifies the final
+contributor's X post does not exist yet, and a rejection would be permanent under that
+`request_id`, so `sonnet.submit.v1` is deliberately left unanswered until it does.
+Keep your submission's `request_id`; you will not need to resubmit.
+
+The referee also posts a signed status to `d-sonnet-2-rules` every four hours.
