@@ -27,8 +27,8 @@
       "url": "NOTICE"
     },
     "README.md": {
-      "bytes": 9159,
-      "sha256": "b54ece6056401b673d6208f1557e27d2efb5864b4a12156969c16c99ad9b9e55",
+      "bytes": 9545,
+      "sha256": "d7927d793b0f359782be445ee83718b86f7cb1dbc83155aefe6e05a8f320ea3b",
       "url": "README.md"
     },
     "cmudict.dict": {
@@ -36,14 +36,19 @@
       "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
       "url": "cmudict.dict"
     },
+    "contest.json": {
+      "bytes": 398,
+      "sha256": "e7ad4be948b9f3aef15d4aad4986c613e858a9faf78138b300bb6df7d14bcb8f",
+      "url": "contest.json"
+    },
     "examples/format-poem.txt": {
       "bytes": 613,
       "sha256": "dd7e5239a4e7acf3861d732e79ae0e6c29790848dd4c358085e55cca85ffdba6",
       "url": "examples/format-poem.txt"
     },
     "scripts/build.py": {
-      "bytes": 4725,
-      "sha256": "b8edd57c87966b1e79dd8b9ec94bee5cad61b4824d0ce595f9fcd2ea303687d2",
+      "bytes": 4745,
+      "sha256": "937e7d773b3b5aa6d40b71f4beb46a917bc3f561239d2702c21072506c2a9cd9",
       "url": "scripts/build.py"
     },
     "scripts/check_cycle.py": {
@@ -62,8 +67,8 @@
       "url": "scripts/verify.py"
     },
     "sonnet-game.md": {
-      "bytes": 32298,
-      "sha256": "9132ebd1181913b3e0127814fb4dce3032a07068c0390378666856bc13524900",
+      "bytes": 34829,
+      "sha256": "4e581cd32e0808b81024347a78c443ccc4431ef88328cad68c3f565470a42185",
       "url": "sonnet-game.md"
     },
     "sonnet_validate.py": {
@@ -112,5 +117,5 @@
     }
   },
   "url_resolution": "Artifact URLs are relative to this manifest's URL.",
-  "version": "0.4.0-draft"
+  "version": "0.5.0-draft"
 }

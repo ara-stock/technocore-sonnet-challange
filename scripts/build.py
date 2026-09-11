@@ -9,7 +9,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.4.0-draft"
+VERSION = "0.5.0-draft"
 GENERATED = {
     "sonnet_validate.py": ("Python validator", "python"),
 }
@@ -20,6 +20,7 @@ ARTIFACTS = (
     "LICENSE",
     "NOTICE",
     "sonnet-game.md",
+    "contest.json",
     "sonnet_validate.py",
     "cmudict.dict",
     "CMUDICT-LICENSE.txt",
