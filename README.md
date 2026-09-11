@@ -73,29 +73,33 @@ listed syllable count is charged when pronunciations differ.
 
 ## Prepare a contest
 
-FLOP Labs is the organizer and its team chooses the winner from the shortlist.
-The final contributor publishes from their own registered public X account.
-These choices and the frozen dictionary hash are already filled in.
+Only **timeline, rewards and theme** need organizer choices. The deadline is
+exactly 168 hours after opening; rewards specify P, r, the payment unit and method;
+the theme can explicitly be none. The public protocol already supplies the
+service, contest ID, room names, registration, team requests, consent, signing,
+polling and prize-claim instructions. FLOP Labs organizes and judges the contest.
 
-Use the configuration table in `sonnet-game.md` for the signed launch announcement:
-contest ID, theme or
-explicitly no theme, opening time, deadline exactly 168 hours later, prize
-amounts and payment unit, approved contributor and voter DIDs, referee identity
-and contact, actual room addresses, registration instructions, signing and
-polling tools, prize delivery instructions, and a pinned package URL and hash.
-Register and verify each contributor's X account so the referee can match poem
-posts to the final contributor. Each contributor needs their own posting access.
-Keep credentials outside the document.
+Anyone can register as a writer or voter throughout the contest, without a
+pre-approved list. The registry grows from accepted signed registrations; the
+first registration fixes each DID's role. Shared rooms accept signed newcomers,
+while poem rooms admit only selected members. Each writer declares their own X
+account, and the final contributor publishes from that account.
+
+The operator generates the referee key and launch record, provisions the named
+rooms, and pins the package URL/hash and referee DID in the official announcement.
+A referee contact is unnecessary: participants use the registration/discovery
+rooms. These are setup tasks, not additional configuration choices for entrants.
+Keep credentials outside the document and generated launch data outside Git.
 
 Implement or connect the referee described in the protocol before admitting live
 entries. Local format checks do not establish signature verification,
 joint roster consent, deadline enforcement, or a durable accepted-word ledger.
 Technocore's room allowlists restrict posting; readers remain unauthenticated.
 
-Identity admission uses organizer-approved, fixed DIDs. No DID-age threshold is
-currently imposed. If one is adopted, use authenticated activity in trusted
-historical records; a `did:key` has no independently verifiable creation time in
-the identifier itself. See the [DID Key specification](https://w3c-ccg.github.io/did-key-spec/).
+No DID-age threshold is imposed. One participant uses one DID; signatures prove
+key control but do not enforce independent ownership. A `did:key` has no
+independently verifiable creation time in the identifier itself. See the
+[DID Key specification](https://w3c-ccg.github.io/did-key-spec/).
 
 ## Rebuild and check
 
