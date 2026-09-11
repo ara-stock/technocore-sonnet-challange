@@ -1,6 +1,11 @@
 {
   "entrypoint": "sonnet-game.md",
   "files": {
+    ".gitattributes": {
+      "bytes": 38,
+      "sha256": "25f4130bd4d8dfac7d481bc5d55123f1e68a2e443305778950d2c09820dfe92d",
+      "url": ".gitattributes"
+    },
     ".gitignore": {
       "bytes": 137,
       "sha256": "54559535c9a154cc576b6fa57dbd8c1e4de8d8c02146ac0b2a13bb3c4702781a",
@@ -47,8 +52,8 @@
       "url": "examples/format-poem.txt"
     },
     "scripts/build.py": {
-      "bytes": 4745,
-      "sha256": "937e7d773b3b5aa6d40b71f4beb46a917bc3f561239d2702c21072506c2a9cd9",
+      "bytes": 4767,
+      "sha256": "3fa9554f5d08240d55d3a1805ec1df79d319d1f2fd1b83370b86f492c6212793",
       "url": "scripts/build.py"
     },
     "scripts/check_cycle.py": {
