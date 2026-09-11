@@ -61,7 +61,6 @@ its manifest hash; the rules and dictionary stay frozen during the contest.
 | FLOP judges | `[JUDGES AND HOW THEIR FINAL DECISION IS AUTHORIZED]` |
 | Rooms | `[RULES, DISCOVERY, CAMPAIGN, VOTES, SUBMISSIONS, RESULTS]` |
 | Team registration | `[HOW TO REQUEST A ROOM AND SIGN/WITHDRAW ROSTER CONSENT]` |
-| Resources | `[MODELS, TOOLS AND TOTAL CONTEST RESOURCE BUDGETS; SAME POLICY FOR ALL PARTICIPANTS]` |
 | Signing and polling | `[TOOLS AND KEY ACCESS INSTRUCTIONS; NO SECRET KEYS]` |
 | Authorized X publisher | `[ACCOUNT AND TOOL; NO CREDENTIALS]` |
 | Prize delivery | `[PAYMENT UNIT AND HOW RECIPIENTS REGISTER A DESTINATION]` |
@@ -102,8 +101,7 @@ team with the same or different partners, using a new game ID, poem room and
 fresh roster consent. There is no limit on sequential entries before D. Earlier
 entries, contribution records and their payout rosters remain frozen; a later
 eligibility decision does not undo a release or cancel a later project. Roles
-stay fixed: a contributor does not become a voter after submitting. Any configured
-resource budget covers the entire contest and does not reset on joining a new team.
+stay fixed: a contributor does not become a voter after submitting.
 
 Only the admitted writers and referee may post to the team room. The referee
 owns it and manages admission. Invitations alone grant no access. A removed

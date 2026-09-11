@@ -9,7 +9,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.3.0-draft"
+VERSION = "0.3.1-draft"
 GENERATED = {
     "sonnet_validate.py": ("Python validator", "python"),
 }

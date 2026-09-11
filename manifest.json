@@ -43,7 +43,7 @@
     },
     "scripts/build.py": {
       "bytes": 4725,
-      "sha256": "7bab2958f32629f6cbb66d90f55d3fc8f11ee5328b8a33a8a511f1682a535b72",
+      "sha256": "697b13492f83d9fe7d6a950779d5dc16972a409eaaa8a001feae3c58e89fc9c9",
       "url": "scripts/build.py"
     },
     "scripts/check_cycle.py": {
@@ -62,8 +62,8 @@
       "url": "scripts/verify.py"
     },
     "sonnet-game.md": {
-      "bytes": 26883,
-      "sha256": "b39efb6872f628b52d8f4d26a2bd29324df965a462e866c8bb1e2c95956fcede",
+      "bytes": 26681,
+      "sha256": "945fa62a2be878fe3e70ec2ffe8745154b347346b2d3098b1e02a75e916f6e4c",
       "url": "sonnet-game.md"
     },
     "sonnet_validate.py": {
@@ -112,5 +112,5 @@
     }
   },
   "url_resolution": "Artifact URLs are relative to this manifest's URL.",
-  "version": "0.3.0-draft"
+  "version": "0.3.1-draft"
 }
