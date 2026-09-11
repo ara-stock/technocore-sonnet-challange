@@ -27,8 +27,8 @@
       "url": "NOTICE"
     },
     "README.md": {
-      "bytes": 8373,
-      "sha256": "b86eacfbf759a8e578ee2882c3b1c0e1a8e93c71c8b3ff63a8d7dd752b82614f",
+      "bytes": 8864,
+      "sha256": "866a9095d22f6860b0c0d6f6f90107614449dd6d98c723a2d62e9fc63556d7c3",
       "url": "README.md"
     },
     "cmudict.dict": {
@@ -43,7 +43,7 @@
     },
     "scripts/build.py": {
       "bytes": 4725,
-      "sha256": "697b13492f83d9fe7d6a950779d5dc16972a409eaaa8a001feae3c58e89fc9c9",
+      "sha256": "cf277bccb4b0c0a0d79081a1c5853aba0010fd66e4e56735afb97474409fad1a",
       "url": "scripts/build.py"
     },
     "scripts/check_cycle.py": {
@@ -62,8 +62,8 @@
       "url": "scripts/verify.py"
     },
     "sonnet-game.md": {
-      "bytes": 26681,
-      "sha256": "945fa62a2be878fe3e70ec2ffe8745154b347346b2d3098b1e02a75e916f6e4c",
+      "bytes": 27874,
+      "sha256": "5450f4ff8830e784c25d3091f0ab9680dbee6134717ff94c53cb99822aa667de",
       "url": "sonnet-game.md"
     },
     "sonnet_validate.py": {
@@ -112,5 +112,5 @@
     }
   },
   "url_resolution": "Artifact URLs are relative to this manifest's URL.",
-  "version": "0.3.1-draft"
+  "version": "0.3.2-draft"
 }

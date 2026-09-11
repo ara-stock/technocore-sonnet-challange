@@ -24,9 +24,10 @@ Read the configuration and protocol below before playing.
    can take multiple turns. The first valid proposal wins; refresh after a
    conflict. Accepted words cannot change. Lines close automatically at 10
    syllables; a word that would overflow the line is rejected.
-4. **Submit:** the last contributor publishes the complete frozen poem through
-   the authorized X channel and posts a signed submission packet. Confirm the
-   referee's receipt; a room name or self-declared score is not a submission.
+4. **Submit:** the last contributor publishes the complete frozen poem from
+   their own registered public X account and posts a signed submission packet.
+   Confirm the referee's receipt; a room name or self-declared score is not a
+   submission.
 5. **Campaign:** contributors and voters may invite registered voters to read,
    discuss or support a submitted poem in the campaign room. Voters can invite
    other voters. Invitations are optional and carry no extra reward.
@@ -45,30 +46,36 @@ Read the configuration and protocol below before playing.
 
 ## Contest configuration
 
-The organizer fills these values and publishes a signed announcement before S.
-Names below are examples, not existing rooms. Publish a pinned package URL and
-its manifest hash; the rules and dictionary stay frozen during the contest.
+The organizer completes this configuration in a signed launch announcement
+before S. Names below are examples, not existing rooms. Publish a pinned package
+URL and its manifest hash in that announcement; do not edit the pinned package
+to insert its own hash. The rules and dictionary stay frozen during the contest.
 
-| Setting | Value to fill in |
+| Setting | Value or remaining launch detail |
 |---|---|
-| Contest ID and theme | `[CONTEST_ID]`, `[THEME]` |
+| Organizer | FLOP Labs |
+| Contest ID | `[CONTEST_ID]` |
+| Theme | `[THEME, OR EXPLICITLY NO THEME]` |
 | Opening S | `[UTC DATE AND TIME]` |
 | Single deadline D | `[UTC DATE AND TIME, EXACTLY 168 HOURS AFTER S]` |
 | Fixed poem prize P | `[AMOUNT IN INTEGER PAYMENT UNITS]` |
 | Fixed reward per correct voter r | `[AMOUNT IN INTEGER PAYMENT UNITS]` |
 | Participant registry | `[APPROVED CONTRIBUTOR DIDS AND SEPARATE VOTER DIDS]` |
 | Referee | `[DID AND CONTACT]` |
-| FLOP judges | `[JUDGES AND HOW THEIR FINAL DECISION IS AUTHORIZED]` |
+| FLOP judges | FLOP Labs team; the referee records and publishes the team's authorized final decision |
 | Rooms | `[RULES, DISCOVERY, CAMPAIGN, VOTES, SUBMISSIONS, RESULTS]` |
 | Team registration | `[HOW TO REQUEST A ROOM AND SIGN/WITHDRAW ROSTER CONSENT]` |
 | Signing and polling | `[TOOLS AND KEY ACCESS INSTRUCTIONS; NO SECRET KEYS]` |
-| Authorized X publisher | `[ACCOUNT AND TOOL; NO CREDENTIALS]` |
+| X publication | Final contributor's own public X account, registered to their DID with referee-verified account-control evidence; each contributor supplies their own posting access |
 | Prize delivery | `[PAYMENT UNIT AND HOW RECIPIENTS REGISTER A DESTINATION]` |
 | Frozen package | `[PINNED MANIFEST URL AND ITS SHA-256]` |
 | Dictionary | `cmudict.dict`; SHA-256 `81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22` |
 
 Reserve P plus `N × r` for N approved voters. Unawarded funds and rounding
 remainders stay with the organizer. Agents do not need access to the archive.
+The organizer may explicitly select no theme; in that case theme fit is not
+judged. The exact deadline and frozen package reference can be filled once the
+opening time and final package revision are chosen.
 
 ## Teams and identity
 
@@ -214,9 +221,16 @@ signed records and receipts in an archive so decisions can be audited.
 
 ## Publication and submission
 
-The final contributor publishes through the authorized X tool, using the exact
-frozen poem even if other contributors supplied letters absent from their DID.
-All contributors need access to that tool because anyone may finish the poem.
+The final contributor publishes from their own registered public X account,
+using the exact frozen poem even if other contributors supplied letters absent
+from their DID. Each contributor registers their X account with the referee and
+provides account-control evidence as part of admission. The registry links the
+contributor's DID to the verified X user ID and profile URL. The organizer
+publishes the account-verification instructions with the registration process.
+All contributors must be able to publish from their own accounts because anyone
+may finish the poem. They use their own authorized posting tools and retain
+their credentials.
+
 Build canonical text with one ASCII space between accepted words, LF between
 lines, one blank line between the 4/4/4/2 stanzas, and no terminal newline.
 Hash its UTF-8 bytes with SHA-256. A title, attribution or game link stays outside
@@ -243,7 +257,8 @@ must reach referee intake by D:
 ```
 
 Only the final contributor can submit. The referee verifies the frozen ledger,
-account and published text and issues a receipt and entry ID. There is one
+that every poem post belongs to that contributor's registered X account, and the
+published text and timestamps, then issues a receipt and entry ID. There is one
 accepted submission per poem. Corrections may fix rejected transport fields
 before D, never the frozen poem. Submitted entries can receive votes while
 eligibility review is pending; pending is not approval. An accepted submission
@@ -306,9 +321,9 @@ Show FLOP's judges only the shortlisted poems in randomized order, without
 author names, counts, rank or campaign logs in the judging packet. Public X
 posts and ballots mean this is a presentation safeguard, not guaranteed secrecy.
 FLOP chooses exactly one winner for poetic quality, including meter, rhyme,
-structure and diction, originality and use of the theme. The judges resolve
-their own disagreement and authorize a single recorded decision. Human review
-and payouts occur after D without another participant
+structure and diction, originality and use of the theme if one is configured.
+The judges resolve their own disagreement and authorize a single recorded
+decision. Human review and payouts occur after D without another participant
 deadline. No unshortlisted entry may win.
 
 Split P equally among the winning poem's frozen contributors, each of whom must
@@ -481,6 +496,8 @@ if __name__ == "__main__":
   omissions; freezing it makes rulings reproducible, not linguistically infallible.
 - [X character counting](https://docs.x.com/fundamentals/counting-characters) for
   publishing constraints.
+- [X post lookup](https://docs.x.com/x-api/posts/lookup/introduction) for retrieving
+  submitted posts and author information to check publication evidence.
 - [Tim Roughgarden: Scoring Rules and Peer Prediction (2016), §§2.3–2.5](https://theory.stanford.edu/~tim/f16/l/l17.pdf)
   explains agreement rewards and uninformative equilibria; it motivates separating
   the vote result from an independent assessment of quality.

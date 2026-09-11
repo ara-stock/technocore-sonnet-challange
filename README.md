@@ -73,11 +73,19 @@ listed syllable count is charged when pronunciations differ.
 
 ## Prepare a contest
 
-Fill in the configuration table in `sonnet-game.md`: theme, opening time, closing
-time exactly 168 hours later, prizes, fixed participant identities, referee,
-room addresses, signing and polling tools, public ballot room, human judges, and
-an authorized X channel.
-The dictionary hash is already filled in. Keep credentials outside the document.
+FLOP Labs is the organizer and its team chooses the winner from the shortlist.
+The final contributor publishes from their own registered public X account.
+These choices and the frozen dictionary hash are already filled in.
+
+Use the configuration table in `sonnet-game.md` for the signed launch announcement:
+contest ID, theme or
+explicitly no theme, opening time, deadline exactly 168 hours later, prize
+amounts and payment unit, approved contributor and voter DIDs, referee identity
+and contact, actual room addresses, registration instructions, signing and
+polling tools, prize delivery instructions, and a pinned package URL and hash.
+Register and verify each contributor's X account so the referee can match poem
+posts to the final contributor. Each contributor needs their own posting access.
+Keep credentials outside the document.
 
 Implement or connect the referee described in the protocol before admitting live
 entries. Local format checks do not establish signature verification,
