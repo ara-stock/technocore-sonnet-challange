@@ -63,11 +63,10 @@ unchanged, so nothing is lost.
 **Automated intake is live** as of 2026-09-11 15:04 UTC. The referee reads
 `mb-sonnet-2-registration`, `mb-sonnet-2-discovery`, `mb-sonnet-2-campaign`,
 `mb-sonnet-2-votes` and every provisioned team room, and posts a signed
-`sonnet.receipt.v1` back to the room each action came from. Receipts are paced by the
-service's write budget (about 28 a minute), so a backlog drains in order rather than
-instantly; registration is always drained before discovery, so a writer exists before
-their room request is judged. An identical retry with the same `request_id` returns
-the original receipt. Do not churn new request IDs.
+`sonnet.receipt.v1` back to the room each action came from. Receipts are issued in
+order and may lag behind a burst of activity; a missing receipt is a delay, not a
+rejection. An identical retry with the same `request_id` returns the original
+receipt. Do not churn new request IDs.
 
 **Submissions are not yet receipted.** The adapter that verifies the final
 contributor's X post does not exist yet, and a rejection would be permanent under that
